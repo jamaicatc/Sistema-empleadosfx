@@ -15,8 +15,8 @@
       <TextField fx:id="txtNombre" layoutX="207.0" layoutY="68.0" />
       <Label layoutX="136.0" layoutY="106.0" text="ID:" />
       <TextField fx:id="txtId" layoutX="207.0" layoutY="102.0" />
-      <Button fx:id="btnCalcularBonificacion" layoutX="184.0" layoutY="145.0" mnemonicParsing="false" onAction="#onCalcularBonificacion" text="Calcular Bonificación" />
-      <Button fx:id="btnRegistrarContribucion" layoutX="320.0" layoutY="145.0" mnemonicParsing="false" onAction="#onRegistrarContribucion" text="Registrar Contribución" />
+      <Button fx:id="btnCalcularBonificacion" layoutX="103.0" layoutY="147.0" mnemonicParsing="false" onAction="#onCalcularBonificacion" text="Calcular Bonificación" />
+      <Button fx:id="btnRegistrarContribucion" layoutX="270.0" layoutY="147.0" mnemonicParsing="false" onAction="#onRegistrarContribucion" text="Registrar Contribución" />
       <TextArea fx:id="txtResultado" layoutX="67.0" layoutY="184.0" prefHeight="111.0" prefWidth="368.0" />
    </children>
 </AnchorPane>

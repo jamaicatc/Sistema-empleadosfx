@@ -34,8 +34,6 @@ public class GerenteController {
             return;
         }
         Gerente gerente = new Gerente();
-        // Si quieres guardar nombre e id, puedes usar setters o el constructor si lo extiendes
-        // gerente.setNombre(nombre); gerente.setId(id); // Si existen los métodos
         double bonificacion = calcularBonificacion(gerente);
         txtResultado.setText("Bonificación para gerente: " + bonificacion);
     }
@@ -48,7 +46,6 @@ public class GerenteController {
 
     public double calcularBonificacion(Gerente gerente) {
         if (gerente == null) return 0;
-        // Bonificación base, puede ser extendida por subclases
         return 1000.0;
     }
 
