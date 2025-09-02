@@ -1,5 +1,7 @@
 package sistemaempleados.empleadosapp.model;
 
+import sistemaempleados.empleadosapp.model.builder.DepartamentoBuilder;
+
 import java.util.List;
 
 public class Departamento {
@@ -10,27 +12,28 @@ public class Departamento {
     public Departamento() {
     }
 
-    public String getNombre() {
-        return nombre;
+    public Departamento(String nombre,
+                        String codigo,
+                        List<Empleado> listaEmpleados) {
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.listaEmpleados = listaEmpleados;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public static DepartamentoBuilder builder() {
+        return new DepartamentoBuilder();
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 
     public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
     public List<Empleado> getListaEmpleados() {
         return listaEmpleados;
     }
 
-    public void setListaEmpleados(List<Empleado> listaEmpleados) {
-        this.listaEmpleados = listaEmpleados;
-    }
 }
