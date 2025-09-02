@@ -29,5 +29,9 @@ public class Empleado{
     public Departamento getDepartamento() {
         return departamento;
     }
+    @Override
+    public String toString() {
+        return "Empleado: " + nombre + " | ID: " + id + (departamento != null ? " | Departamento: " + departamento.getNombre() : "");
+    }
 
 }

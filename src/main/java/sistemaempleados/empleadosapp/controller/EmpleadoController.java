@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import sistemaempleados.empleadosapp.model.Empleado;
+import sistemaempleados.empleadosapp.factory.ModelFactory;
+import sistemaempleados.empleadosapp.services.IContribuyente;
 
 public class EmpleadoController {
 
@@ -40,10 +42,22 @@ public class EmpleadoController {
     }
 
     private void agregarEmpleado() {
-        Empleado empleado = new Empleado();
-        empleado.setNombre(txtNombre.getText());
-        empleado.setId(txtId.getText());
-
+        String nombre = txtNombre.getText();
+        String id = txtId.getText();
+        if (nombre == null || nombre.isEmpty() || id == null || id.isEmpty()) {
+            txtResultado.setText("Nombre e ID son obligatorios");
+            return;
+        }
+        Empleado empleado = ModelFactory.crearEmpleado(nombre, id);
         txtResultado.setText(empleado.toString());
+    }
+
+    public void registrarContribucion(IContribuyente contribuyente) {
+        if (contribuyente == null) {
+            txtResultado.setText("No se puede contribuir: objeto nulo");
+            return;
+        }
+        contribuyente.contribuir();
+        txtResultado.setText("Contribución registrada correctamente");
     }
 }
